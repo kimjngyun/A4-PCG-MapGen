@@ -110,8 +110,8 @@ class Maze(object):
         
         data_list=[]
         
-        for x in range(self.width*2+1):
-            for y in range(self.height*2+1):
+        for x in range(self.height*2+1):
+            for y in range(self.width*2+1):
                 data=0
                 if str_matrix[x][y] == 1:
                     data = 57
@@ -137,7 +137,6 @@ class Maze(object):
                         e = 1
                     else:
                         e = str_matrix[x][y+1]
-                    print(n, e, s, w)
 
                     # append gid at array data
                     if n == 0 and e == 0 and s == 0 and w == 0:
