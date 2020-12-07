@@ -138,6 +138,8 @@ class Maze(object):
                     else:
                         e = str_matrix[x][y+1]
 
+
+
                     # append gid at array data
                     if n == 0 and e == 0 and s == 0 and w == 0:
                         data=241
@@ -169,6 +171,13 @@ class Maze(object):
                         data=213
                     elif n == 1 and e == 1 and s == 1 and w == 0:
                         data=227
+        
+                    # broken wall: 10%
+                    if random.randrange(1,11) == 1:
+                        isBrokenWall = 1
+                    else:
+                        isBrokenWall = 0
+                    data += isBrokenWall
                 data_list.append(data)
         print(data_list)
         return data_list
@@ -249,7 +258,8 @@ if __name__ == '__main__':
     f.write('%d"> \n' % map_height)
     f.write('<data> \n')
 
-    for i in Maze._gid_matrix(Maze.generate(width, height)):
+    tile_map_data = Maze._gid_matrix(Maze.generate(width, height))
+    for i in tile_map_data:
         data = '<tile gid="%d"/>\n' % i
         f.write(data)
     f.write('</data> \n')
