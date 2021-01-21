@@ -1,4 +1,6 @@
 # A4-PCG-MapGen
+A procedure content generation - Map Generator for A4 (from project5, CS387)
+
 ## Reference
 https://github.com/boppreh/maze
 
